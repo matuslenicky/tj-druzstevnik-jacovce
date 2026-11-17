@@ -157,7 +157,7 @@ const mapyUrl = `https://mapy.com/fnc/v1/showmap?mapset=basic&amp;center=${ST.ge
 const A = teams[0];
 const YEAR = Number(TODAY.slice(0, 4));
 const DO100 = 2032 - YEAR;
-const DESC = `${club.nazov} – futbal v Jacovciach od roku ${club.zalozenie}. Zápasy, výsledky, tabuľky a súpisky áčka (${A.leagueName}), dorastu, žiakov a prípravky, 2. miesto vo VI. lige 2025/26 a cesta k storočnici v roku 2032.`;
+const DESC = `${club.nazov} – futbal v Jacovciach od roku ${club.zalozenie}. Zápasy, výsledky, tabuľky a súpisky áčka (${A.leagueName}), dorastu, žiakov a prípravky, 2. miesto v VI. lige 2025/26 a cesta k storočnici v roku 2032.`;
 const nextHome = upcoming.find((m) => m.home && m.team === A.slug);
 const winterNow = (() => { const n = upcoming.find((m) => m.team === A.slug); return !!n && (dObj(n.date) - dObj(TODAY)) / 864e5 > 14; })();
 
@@ -250,10 +250,12 @@ ${body}
 }
 
 // ---- spoločné bloky ------------------------------------------------------------------------------
+// skratka klubu („TJ“, „OFK“) nezostane na konci riadka bez mena (nadpis podstránky, ihrisko v zápasovej karte)
+const glueAbbr = (s) => s.replace(/(^|\s)(TJ|FK|FC|MFK|MFC|OŠK|ŠK|OFK|MŠK|PFK|ZFC|TFK|SDM|AFC|OTJ|ŠC|PŠK|FKS) (?=\S)/g, `$1$2${NB}`);
 // hlavička podstránky: biela plocha so zeleným trojuholníkom vlajočky vpravo (CSS)
 const pageHead = ({ title, sub = '', crumbs = [], R, aside = '' }) => `<section class="phead"><div class="wrap phead-in">
   <div>${crumbs.length ? `<nav class="crumbs" aria-label="Omrvinky"><a href="${R}">Úvod</a>${crumbs.map(([u, x]) => u ? `<a href="${R}${u}">${esc(x)}</a>` : `<span aria-current="page">${esc(x)}</span>`).join('')}</nav>` : ''}
-  <h1 class="h1">${esc(title).replace(/(^|\s)(TJ|FK|FC|MFK|MFC|OŠK|ŠK|OFK|MŠK|PFK|ZFC|TFK|SDM|AFC|OTJ|ŠC|PŠK|FKS) (?=\S)/g, `$1$2${NB}`)}</h1>${sub ? `<p class="phead-sub">${sub}</p>` : ''}</div>${aside}
+  <h1 class="h1">${glueAbbr(esc(title))}</h1>${sub ? `<p class="phead-sub">${sub}</p>` : ''}</div>${aside}
 </div></section>`;
 const secHead = (h, id, moreLink = '', eyebrow = '') => `<div class="sec-head"><div>${eyebrow ? `<p class="eyebrow">${eyebrow}</p>` : ''}<h2 class="h2" id="${id}">${h}</h2></div>${moreLink}</div>`;
 const more = (href, t) => `<a class="more" href="${href}">${t}${I.arrow}</a>`;
@@ -273,7 +275,7 @@ function card(m, R, { big = false, label = '', self = false } = {}) {
   const links = [];
   if (m.score && m.detail && !self) links.push(`<a class="mp-a" href="${R}${m.url}">Priebeh a zostavy${I.arrow}</a>`);
   if (!m.past && !self) links.push(`<a class="mp-a" href="${R}kalendar/zapas-${m.id}.ics" download>${I.cal}Do kalendára</a>`);
-  const meta = [esc(m.comp) + (m.roundName ? `, ${esc(m.roundName)}` : ''), m.venue ? esc(venueName(m.venue)) : '', m.audience ? plural(m.audience, 'divák', 'diváci', 'divákov') : ''].filter(Boolean);
+  const meta = [esc(m.comp) + (m.roundName ? `, ${esc(m.roundName)}` : ''), m.venue ? glueAbbr(esc(venueName(m.venue))) : '', m.audience ? plural(m.audience, 'divák', 'diváci', 'divákov') : ''].filter(Boolean);
   return `<article class="mp${big ? ' mp--big' : ''}">
   <p class="mp-top"><span class="mp-label">${esc(lbl)}</span><span>${esc(m.teamObj.full)}</span></p>
   <p class="mp-when"><time datetime="${m.date}">${dLong(m.date)}</time></p>
@@ -322,7 +324,7 @@ function tableHtml(tb, R, { compact = false, caption = '' } = {}) {
 // forma ako rad trojuholníkových vlajočiek (hrot nadol ako erb)
 const formHtml = (slug, n = 5) => {
   const last = teamMatches(slug).filter((m) => m.res).slice(-n);
-  return last.length ? `<ol class="form" aria-label="Forma: ${last.length === 1 ? 'posledný zápas' : last.length <= 4 ? `posledné ${last.length} zápasy` : `posledných ${last.length} zápasov`}">${last.map((m) => `<li class="form--${m.res}" title="${dShort(m.date)} ${esc(m.opponent)} ${m.score}"><span aria-hidden="true">${RES_S[m.res]}</span><span class="sr">${RES[m.res]} ${esc(m.opponent)} ${m.score}</span></li>`).join('')}</ol>` : '';
+  return last.length ? `<ol class="form" aria-label="Forma: ${last.length === 1 ? 'posledný zápas' : last.length <= 4 ? `posledné ${last.length} zápasy` : `posledných ${last.length} zápasov`}">${last.map((m) => `<li class="form--${m.res}" title="${dShort(m.date)} ${esc(m.opponent)} ${m.gf}:${m.ga}"><span aria-hidden="true">${RES_S[m.res]}</span><span class="sr">${RES[m.res]} ${esc(m.opponent)} ${m.gf}:${m.ga}</span></li>`).join('')}</ol>` : '';
 };
 
 // kalendár zápasov (.ics): odber cez webcal/Google doplní site.mjs, inak stiahnutie
@@ -351,7 +353,7 @@ function teamsBoard(R, list) {
     if (!m) return '';
     const href = m.detail || !m.past ? `${R}${m.url}` : `${R}${t.url}`;
     const right = m.score
-      ? `<span class="tb-score tb-score--${m.res}"><span class="sr">${RES[m.res]} </span>${esc(m.score)}</span>`
+      ? `<span class="tb-score tb-score--${m.res}"><span class="sr">${RES[m.res]} </span>${m.gf}:${m.ga}</span>`
       : m.past ? '<span class="tb-score tb-score--none">bez výsl.</span>' : `<span class="tb-score tb-score--time">${esc(m.time || '')}</span>`;
     return `<li><a class="tb-row" href="${href}">
     <span class="tb-code">${esc(t.short)}</span>
@@ -404,7 +406,7 @@ add('', {
   <div class="hero-copy">
     <p class="eyebrow">Futbal od 10. júla 1932 · ročník ${SEASON}</p>
     <h1 class="hero-h" id="hero-h"><span class="hero-k">TJ</span> Družstevník Jacovce</h1>
-    <p class="hero-p">V minulom ročníku skončilo áčko druhé vo VI. lige Severovýchod, na jar s 14 výhrami a jedinou prehrou. Teraz hrá ${esc(acc(A.leagueName))}${A.pos ? ` a ${winterNow ? 'po jeseni ' : ''}je na ${A.pos}. mieste ${zo(A.of)}` : ''}. Najmenší, Jacovské bociany, sú majstrami okresu.</p>
+    <p class="hero-p">V minulom ročníku skončilo áčko druhé v VI. lige Severovýchod, na jar s 14 výhrami a jedinou prehrou. Teraz hrá ${esc(acc(A.leagueName))}${A.pos ? ` a ${winterNow ? 'po jeseni ' : ''}je na ${A.pos}. mieste ${zo(A.of)}` : ''}. Najmenší, Jacovské bociany, sú majstrami okresu.</p>
     <p class="hero-cta"><a class="btn btn--green" href="${R}zapasy/">Program a výsledky</a><a class="btn btn--line" href="${R}klub/">Cesta k storočnici</a></p>
   </div>
   <div class="hero-pen">
@@ -636,7 +638,7 @@ add('mladez/', {
 
 // klub, storočnica, mená a obec
 add('klub/', {
-  title: 'Klub a storočnica', active: 'klub/', desc: `${club.nazov}: od 10. júla 1932, šesť mien klubu, Slovenský pohár 1956, majstri okresu, 2. miesto vo VI. lige 2025/26 a storočnica v roku 2032.`,
+  title: 'Klub a storočnica', active: 'klub/', desc: `${club.nazov}: od 10. júla 1932, šesť mien klubu, Slovenský pohár 1956, majstri okresu, 2. miesto v VI. lige 2025/26 a storočnica v roku 2032.`,
   body: (R) => `${pageHead({ title: 'Klub a storočnica', sub: `Futbal v Jacovciach od 10. júla 1932, od roku 1960 pod menom TJ Družstevník. Farby ${esc(club.farby)}.`, R, crumbs: [[null, 'Klub']] })}
 <section class="sec sec--first"><div class="wrap klub-grid">
   <div>
@@ -831,7 +833,7 @@ const typo = (html) => html.split(/(<script[\s\S]*?<\/script>|<style[\s\S]*?<\/s
   .replace(/ - /g, ' – ') // spojovník medzi medzerami (názvy klubov a ihrísk zo Sportnetu) -> pomlčka
   .replace(/\b(U\d{1,2}) ([A-D])\b/g, `$1${NB}$2`) // „U15 A“ sa nerozdelí
   .replace(/([a-záäčďéíĺľňóôŕšťúýž]) (U\d{1,2})\b/g, `$1${NB}$2`) // „dorast U19“, „prípravky U11“ sa nerozdelí
-  .replace(/(\d) (?=(?:rok|roky|rokov|rokoch|divák|diváci|divákov|bod|body|bodov|tím|tímy|tímov|mužstiev|vzorkami|m²)(?![a-záäčďéíĺľňóôŕšťúýž]))/g, `$1${NB}`) // „400 divákov“, „23 rokov“
+  .replace(/(\d) (?=(?:rok|roky|rokov|rokoch|divák|diváci|divákov|bod|body|bodov|tím|tímy|tímov|mužstiev|vzorkami|m²|výhra|výhry|výhier|výhrami|prehra|prehry|prehier|víťazstiev|zápasov|gólov)(?![a-záäčďéíĺľňóôŕšťúýž]))/g, `$1${NB}`) // „400 divákov“, „23 rokov“
   .replace(/(?<=^|[\s(])(po|ut|st|št|pi|so|ne) (?=\d{1,2}\.)/g, `$1${NB}`) // „ne 15. 11.“
   .replace(/(\d\.) (?=(?:kol[oae]|miest[oea])\b)/g, `$1${NB}`)
   .replace(/(?<![\d.])(\d{1,2}\.) (?=[a-záäčďéíĺľňóôŕšťúýž])/g, `$1${NB}`) // „14. storočia“, „3. mieste“ (radová číslovka s podstatným menom)

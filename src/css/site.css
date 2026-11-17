@@ -66,7 +66,7 @@ abbr[title] { text-decoration: none; }
 .btn--green { background: var(--green); color: #fff; }
 .btn--green:hover { background: var(--green-d); }
 .btn--line { border-color: var(--green); color: var(--green-d); background: transparent; }
-.btn--line:hover { background: var(--green); color: #fff; }
+@media (hover: hover) { .btn--line:hover { background: var(--green); color: #fff; } }
 .btn--white { background: #fff; color: var(--green-d); }
 .btn--white:hover { background: var(--mint-2); }
 .btn--ghost { border-color: rgba(255, 255, 255, .85); color: #fff; }
@@ -338,7 +338,7 @@ html.flt .cols2--list { visibility: hidden; }
 .toc a:hover { border-color: var(--green); }
 .tbl--roc td small { display: block; font: 500 .8125rem/1.3 var(--text); color: var(--muted); }
 .tbl--roc tbody th { font: 800 .9375rem/1.3 var(--text); }
-@media (max-width: 379.98px) { .tbl--roc td.nw { white-space: normal; } .tbl--roc td.nw span { display: block; font-size: .8125rem; } }
+@media (max-width: 379.98px) { .tbl--roc td.nw { white-space: normal; } .tbl--roc td.nw span { display: block; font-size: .8125rem; } .tbl thead th { letter-spacing: .05em; } }
 
 /* liga na úvode */
 .liga { display: grid; gap: 28px; }
@@ -571,3 +571,5 @@ html.flt .cols2--list { visibility: hidden; }
 /* tlačidlo menu: tri čiary, po otvorení krížik */
 .menu-btn .i + .i, .menu-btn[aria-expanded="true"] .i:first-child { display: none; }
 .menu-btn[aria-expanded="true"] .i + .i { display: block; }
+/* najužšie telefóny: tabuľky bez erbov, aby sa meno tímu zmestilo na dva riadky */
+@media (max-width: 359.98px) { .tbl .tteam .logo { display: none; } }
