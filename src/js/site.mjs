@@ -1,21 +1,20 @@
-// Správanie webu TJ Družstevník Jacovce (bez knižníc): rozbaľovacie menu, filtre zápasov, odpočet, kalendár.
+// Správanie klubového webu (bez knižníc): menu v dialógu, filtre zápasov, odpočet do výkopu, kalendár.
 const $ = (s, el = document) => el.querySelector(s);
 const $$ = (s, el = document) => [...el.querySelectorAll(s)];
 
-// ---- menu na telefóne: zelený panel rozbalený pod hlavičkou (tlačidlo s aria-expanded, Esc ho zavrie a vráti fokus) ----
+// ---- menu na telefóne: modálny <dialog> cez celú obrazovku (Esc, „Zavrieť“ a klik na odkaz ho zatvoria, fokus sa vráti na tlačidlo) ----
 const menuBtn = $('.menu-btn'), menu = $('#menu');
-if (menuBtn && menu) {
-  const label = $('span', menuBtn);
-  const set = (open) => {
-    menuBtn.setAttribute('aria-expanded', String(open));
-    menu.hidden = !open;
-    document.documentElement.classList.toggle('menu-open', open);
-    if (label) label.textContent = open ? 'Zavrieť' : 'Menu';
-  };
-  menuBtn.addEventListener('click', () => set(menu.hidden));
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !menu.hidden) { set(false); menuBtn.focus(); } });
-  menu.addEventListener('click', (e) => { if (e.target.closest('a')) set(false); });
-  matchMedia('(min-width: 1000px)').addEventListener('change', (e) => { if (e.matches) set(false); }); // od 1000 px je menu v hlavičke (site.css)
+if (menuBtn && menu && typeof menu.showModal === 'function') {
+  const close = () => { if (menu.open) menu.close(); };
+  menuBtn.addEventListener('click', () => { menu.showModal(); menuBtn.setAttribute('aria-expanded', 'true'); document.documentElement.classList.add('menu-open'); });
+  menu.addEventListener('close', () => { menuBtn.setAttribute('aria-expanded', 'false'); document.documentElement.classList.remove('menu-open'); menuBtn.focus(); });
+  $('[data-close]', menu).addEventListener('click', close);
+  // klik na odkaz alebo mimo panelu (cieľom je samotný <dialog>) menu zavrie
+  menu.addEventListener('click', (e) => {
+    if (e.target.closest('a')) return close();
+    if (e.target === menu) close();
+  });
+  matchMedia('(min-width: 1000px)').addEventListener('change', (e) => { if (e.matches) close(); }); // od 1000 px je menu v hlavičke (site.css)
 }
 
 // ---- odpočet do výkopu ----

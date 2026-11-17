@@ -6,16 +6,13 @@ Ukážka: https://matuslenicky.github.io/tj-druzstevnik-jacovce/ · administrác
 
 ## Vzhľad
 
-**„Zábradlie“.** Erb klubu je zeleno-biela vlajočka (obrátený trojuholník) s rokom 1932, okolo ihriska stojí od 70. rokov zeleno-biele tyčové zábradlie.
+**„Mozaika“ (dizajn v2, 17. 11. 2026).** Svetlý podklad, biele dlaždice, jedna zelená. Písmo Syne (nadpisy, čísla) a Atkinson Hyperlegible (text).
 
-- hlavička s **koľajnicou zábradlia** (dve koľajnice a tyče), rovnaké zábradlie nad pätou,
-- úvod s **veľkou vlajočkou** a odpočtom **rokov do storočnice** (2032),
-- **„Zábradlie storočnice“**: 101 tyčí, jedna za každý rok 1932 – 2032, míľniky sú vyššie tyče s hlavicou, budúce roky priesvitné,
-- program ako **dvojstranná časová os**: dátum na zelenej osi, zápasy doma vľavo, vonku vpravo (na telefóne os vľavo a odsadenie podľa strany),
-- výsledky ako **gólové váhy**: od stredu naše góly zeleným pruhom doľava, súperove sivým doprava,
-- forma ako **rad vlajočiek** s hrotom nadol, hlavičky podstránok a karty so zelenou vlajočkou v rohu,
-- menu na telefóne ako **zelený panel rozbalený pod hlavičkou** (nie modálne okno),
-- písmo **Unbounded** (široké nadpisy a čísla) a **Manrope** (text).
+- úvod je mriežka dlaždíc rôznej veľkosti: najbližší zápas áčka, posledný výsledok, miesto a forma, výsledky, program, ročník 2025/26, Jacovské bociany a odpočet do storočnice 2032,
+- stránka Klub v rovnakých dlaždiciach: míľniky, zápisnica 1932, šesť mien klubu, ročníky áčka, bociany, ihrisko a obec,
+- menu na telefóne je svetlá plocha cez celú obrazovku.
+
+Web sa skladá zo spoločného jadra v2 (`kluby-siet/engine`: `python assemble.py <web>`), vlastný je `src/site.js` (úvod, Klub, nastavenia) a `src/css/skin.css`.
 
 ## Obsah a zdroje
 

@@ -1,0 +1,128 @@
+/* TJ Družstevník Jacovce – „Mozaika“. Svetlý podklad, biele dlaždice, jedna zelená. */
+:root {
+  --bg: #f4f5f0; --paper: #fff; --ink: #14201a; --muted: #56625a; --line: #e1e5dd;
+  --green: #0b5e2a; --green-l: #e5f1e8; --focus: #0b5e2a; --link: #0b5e2a;
+  --disp: 'Syne', system-ui, sans-serif;
+  --text: 'Atkinson Hyperlegible', system-ui, sans-serif;
+  --text-size: 1.0625rem; --lh: 1.6;
+  --menu-bg: #f4f5f0; --menu-ink: #14201a;
+}
+.h1, .h2, .tile-h, .brand-n, .next-o, .last-s, .pos-n, .big-n, .teams-n, .stat b, .mc-mid { font-family: var(--disp); font-weight: 700; letter-spacing: -.02em; }
+.h1 { font-size: clamp(2rem, 5.4vw, 3.4rem); line-height: 1.05; margin-bottom: 22px; }
+.h2 { font-size: clamp(1.5rem, 3.4vw, 2rem); line-height: 1.15; }
+.h3 { font-weight: 700; font-size: 1.1rem; margin-bottom: 10px; }
+.h4 { font-weight: 700; }
+.kicker, .tile-k { font-size: .8125rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.more { font-weight: 700; color: var(--green); margin-top: 6px; }
+.more .i { width: 15px; height: 15px; }
+.btn { background: var(--green); color: #fff; font-weight: 700; border-radius: 10px; }
+.btn:hover { background: #084a21; }
+.btn--line { background: transparent; color: var(--green); border-color: var(--green); }
+.btn--line:hover { background: var(--green); color: #fff; }
+
+/* hlavička */
+.hdr { background: var(--bg); }
+.brand img { height: 44px; }
+.brand-n { font-size: 1.15rem; }
+.brand-s { font-size: .8125rem; color: var(--muted); }
+.nav ul { gap: 4px; }
+.nav a { padding: 0 14px; border-radius: 10px; color: var(--ink); font-weight: 700; }
+.nav a:hover { background: var(--paper); }
+.nav a[aria-current="page"] { background: var(--paper); color: var(--green); box-shadow: inset 0 0 0 1px var(--line); }
+.menu-btn { background: var(--paper); color: var(--ink); border: 1px solid var(--line); border-radius: 10px; font-weight: 700; }
+@media (max-width: 379.98px) { .brand-s { display: none; } }
+.menu-k { font-family: var(--disp); font-weight: 700; }
+.menu-nav a { font: 700 2rem/1.15 var(--disp); border-bottom: 1px solid var(--line); }
+.menu-nav a[aria-current="page"] { color: var(--green); }
+.menu-x { border-radius: 10px; }
+
+/* mozaika */
+.bento { display: grid; gap: 14px; grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 760px) { .bento { grid-template-columns: repeat(6, minmax(0, 1fr)); } }
+@media (min-width: 1100px) { .bento { grid-template-columns: repeat(12, minmax(0, 1fr)); } }
+.tile { display: flex; flex-direction: column; min-width: 0; padding: 22px 22px 18px; background: var(--paper); border: 1px solid var(--line); border-radius: 16px; color: var(--ink); text-decoration: none; }
+a.tile:hover { border-color: var(--green); }
+.tile-h { font-size: 1.25rem; margin-bottom: 10px; }
+.tile-m { margin-top: 4px; font-size: .9375rem; color: var(--muted); }
+@media (min-width: 760px) {
+  .tile--next { grid-column: span 6; } .tile--last, .tile--pos { grid-column: span 3; }
+  .tile--res, .tile--prog { grid-column: span 3; } .tile--green, .tile--storks { grid-column: span 3; } .tile--cent { grid-column: span 6; }
+  .bento--page .tile { grid-column: span 3; } .bento--page .tile--wide { grid-column: span 6; }
+}
+@media (min-width: 1100px) {
+  .tile--next { grid-column: span 7; grid-row: span 2; } .tile--last { grid-column: span 5; } .tile--pos { grid-column: span 5; }
+  .tile--res { grid-column: span 6; } .tile--prog { grid-column: span 6; }
+  .tile--green, .tile--storks, .tile--cent { grid-column: span 4; }
+  .bento--page .tile { grid-column: span 6; } .bento--page .tile--wide { grid-column: span 12; }
+}
+.tile--next { justify-content: center; }
+.next-o { margin-top: 10px; font-size: clamp(1.8rem, 4.4vw, 3rem); line-height: 1.05; }
+.next-d { margin-top: 10px; font-size: 1.125rem; }
+.next-cd { margin-top: 4px; color: var(--muted); }
+.next-cd .cd { font-weight: 700; color: var(--green); }
+.last-s { margin-top: 6px; font-size: 3.4rem; line-height: 1; color: var(--green); }
+.last-o { margin-top: 6px; font-weight: 700; }
+.pos-n { margin-top: 6px; font-size: 3.4rem; line-height: 1; }
+.pos-n span { margin-left: 8px; font-size: 1rem; font-family: var(--text); color: var(--muted); letter-spacing: 0; }
+.tile--pos .form { margin: 12px 0 0; }
+.tile--green { background: var(--green); border-color: var(--green); color: #fff; }
+.tile--green .tile-k, .tile--green p { color: #e2efe6; }
+.tile--green .big-n { color: #fff; }
+.tile--green:hover { border-color: var(--ink); }
+.big-n { margin: 6px 0 6px; font-size: 1.7rem; line-height: 1.1; }
+.tile--storks .big-n, .tile--cent .big-n { color: var(--green); }
+
+/* zápasy, tabuľky */
+.fx { border-bottom: 1px solid var(--line); }
+.fx:last-child { border-bottom: 0; }
+.fx-a { grid-template-columns: 54px minmax(0, 1fr) auto; min-height: 54px; padding: 5px 0; }
+.fx-d { font-size: .875rem; font-weight: 700; }
+.fx-dd { font-weight: 400; color: var(--muted); font-size: .8125rem; }
+.fx-on { font-weight: 700; line-height: 1.25; }
+.fx-k { font-size: .8125rem; }
+.fx-t { font-weight: 700; color: var(--green); }
+.sc { font-family: var(--disp); font-weight: 700; min-width: 50px; padding: 4px 8px; border-radius: 8px; }
+.sc--w { background: var(--green); color: #fff; }
+.sc--d { background: var(--green-l); color: var(--green); }
+.sc--l { background: #eef0ec; color: var(--muted); }
+.sc--n { color: var(--muted); font-size: .875rem; font-family: var(--text); }
+.month-h { font: 700 1.1rem/1.2 var(--disp); }
+.form li { border-radius: 8px; font-weight: 700; font-size: .8125rem; background: #eef0ec; }
+.form--w { background: var(--green) !important; color: #fff; }
+.tbl { font-size: .9375rem; background: var(--paper); }
+.tbl thead th { font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; font-weight: 700; color: var(--muted); border-bottom: 1px solid var(--ink); }
+.tbl tbody tr { border-bottom: 1px solid var(--line); }
+.tbl .pos { font-weight: 700; color: var(--muted); }
+.tbl tr.our { background: var(--green-l); }
+.tbl tr.our th, .tbl tr.our td { font-weight: 700; color: var(--green); }
+.toc a { border-radius: 10px; background: var(--paper); color: var(--green); font-weight: 700; box-shadow: inset 0 0 0 1px var(--line); }
+.mil { list-style: none; margin: 0; padding: 0; display: grid; gap: 0 28px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); }
+.mil li { display: grid; grid-template-columns: 58px minmax(0, 1fr); gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--line); }
+.mil b { font-family: var(--disp); color: var(--green); }
+.mil--f { color: var(--muted); }
+.names { list-style: none; margin: 0; padding: 0; }
+.names li { display: flex; flex-direction: column; padding: 8px 0; border-bottom: 1px solid var(--line); }
+.names span { font-size: .8125rem; color: var(--muted); }
+
+/* podstránky */
+.phead { padding: 30px 0 18px; }
+.mc { padding: 22px 20px 16px; background: var(--paper); border: 1px solid var(--line); border-radius: 16px; }
+.mc-label { color: var(--green); font-weight: 700; }
+.mc-mid { font-size: 2.8rem; }
+.mc-mid--w { color: var(--green); }
+.chip { border: 0; border-radius: 10px; background: var(--paper); color: var(--ink); font-weight: 700; box-shadow: inset 0 0 0 1px var(--line); }
+.chip[aria-pressed="true"] { background: var(--green); color: #fff; box-shadow: none; }
+.teams { background: var(--paper); border-radius: 16px; padding: 0 20px; border: 1px solid var(--line); }
+.teams li + li a { border-top: 1px solid var(--line); }
+.teams-n { font-size: 1.6rem; color: var(--green); }
+.teams-s { font-weight: 700; }
+.join { background: var(--paper); border-radius: 16px; border: 1px solid var(--line); }
+.stat b { font-size: 2.2rem; color: var(--green); }
+.contact-mail { font: 700 clamp(1.3rem, 4vw, 2rem)/1.2 var(--disp); }
+.kv dt { font-weight: 700; color: var(--green); }
+
+/* päta */
+.ftr { background: var(--paper); border-top: 1px solid var(--line); }
+.ftr-name { font: 700 1.15rem/1.2 var(--disp); }
+.ftr-bar { border-top: 1px solid var(--line); color: var(--muted); }
+.demo { background: var(--green); color: #fff; }
