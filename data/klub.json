@@ -1,0 +1,122 @@
+{
+  "_zdroj": "Ručne zapísané len zo zverejnených zdrojov (uvedené pri každej časti). Nič nedopĺňať odhadom – chýbajúce údaje dodá klub.",
+  "nazov": "TJ Družstevník Jacovce",
+  "kratky": "Jacovce",
+  "pravnyNazov": "TJ Družstevník Jacovce",
+  "_pravnyNazov": "Sportnet",
+  "mesto": "Jacovce",
+  "zalozenie": 1932,
+  "_zalozenie": "Jacovský hlásnik 1/2022 a 2/2022: Jacovský športový klub založený 10. júla 1932; rok aj na erbe klubu",
+  "farby": "zelená a biela",
+  "_farby": "erb klubu (Sportnet), zeleno-biele zábradlie a logo na stene ihriska (Jacovský hlásnik 1/2026)",
+  "erbAlt": "Erb TJ Družstevník Jacovce: obrátený trojuholník ako vlajočka, zeleno-biely, s nápisom Družstevník Jacovce 1932 a loptou",
+  "adresa": ["Májová", "956 21 Jacovce"],
+  "_adresa": "Sportnet (ulica Májová, PSČ 956 21)",
+  "kontakt": { "email": "tjjacovce@azet.sk" },
+  "_kontakt": "Sportnet (kontakt klubu)",
+  "sportnetUrl": "https://sportnet.sme.sk/futbalnet/k/tj-druzstevnik-jacovce/",
+  "noviny": "https://www.obecjacovce.sk/jacovsky-hlasnik.html",
+  "_noviny": "Jacovský hlásnik, noviny obce (dve čísla ročne), rubrika šport",
+  "stadion": {
+    "_zdroj": "Jacovský hlásnik 1/2026 (Nová „futbalová“ stena), Sportnet (poloha)",
+    "nazov": "Futbalové ihrisko TJ Družstevník Jacovce",
+    "geo": [48.5929823, 18.1340254],
+    "fakty": [
+      { "k": "1948", "t": "Terajšie ihrisko dali do užívania v roku 1948. Najskôr malo drevené oplotenie a drevené bránky, neskôr klasický plot a železné bránky." },
+      { "k": "1972", "t": "K 40. výročiu klubu pribudla nová tribúna a kolkáreň. Plot neskôr nahradilo zeleno-biele tyčové zábradlie." },
+      { "k": "2020", "t": "Na ihrisku vybudovali závlahu." },
+      { "k": "2025", "t": "Stena bývalej turistickej ubytovne smerom k ihrisku dostala šedú fasádu a veľké zeleno-biele trojuholníkové logo klubu, s pomocou sponzorov a dobrovoľníkov." }
+    ]
+  },
+  "mena": {
+    "_zdroj": "Jacovský hlásnik 1/2022 (Deväťdesiat rokov organizovaného športu v Jacovciach)",
+    "zoznam": [
+      { "roky": "1932 – 1939", "nazov": "Jacovský športový klub (JŠK)" },
+      { "roky": "1940 – 1945", "nazov": "Športový klub Hlinkovej gardy" },
+      { "roky": "1945 – 1950", "nazov": "Jacovský športový klub (JŠK)" },
+      { "roky": "od 1950", "nazov": "Sokol Jacovce" },
+      { "roky": "potom", "nazov": "TJ Sokol JRD Jacovce" },
+      { "roky": "od 1960", "nazov": "TJ Družstevník Jacovce" }
+    ]
+  },
+  "zapisnica": {
+    "_zdroj": "Jacovský hlásnik 1/2022 (citované zápisnice z roku 1932)",
+    "text": "Na prvej schôdzi 10. júla 1932 v miestnosti pána Neumanna zvolili výbor, predsedom sa stal František Žembera. Na schôdzi 26. septembra 1932 sa rozhodlo o kúpe kopačiek, objednali ich hneď na druhý deň. Hráči ich však mali dostať až vtedy, keď vyrovnajú členské príspevky aj za zameškané mesiace."
+  },
+  "milniky": {
+    "_zdroj": "Jacovský hlásnik 1/2022, 2/2022, 1/2026; Sportnet",
+    "zoznam": [
+      { "rok": 1932, "text": "10. júla vzniká Jacovský športový klub." },
+      { "rok": 1948, "text": "Do užívania ide terajšie ihrisko." },
+      { "rok": 1956, "text": "Zisk Slovenského pohára po linke Sokola a 2. miesto v Československu. V tom istom roku Jacovce vyhrali I. B triedu Nitrianskeho kraja (18 výhier, 1 remíza, 2 prehry, 63:21) a postúpili do I. A triedy." },
+      { "rok": 1960, "text": "Klub dostáva dnešné meno TJ Družstevník Jacovce." },
+      { "rok": 1972, "text": "K 40. výročiu nová tribúna a kolkáreň." },
+      { "rok": 2007, "text": "Zatiaľ posledný titul majstra okresu Topoľčany (2006/07); predtým 1953, 1955, 1979/80 a 1985/86." },
+      { "rok": 2022, "text": "90. výročie oslávili 2. júla exhibičným zápasom proti mužstvu Československý lev." },
+      { "rok": 2026, "text": "Áčko končí ročník 2025/26 druhé vo VI. lige Severovýchod, prípravka U9 sa stáva majstrom okresu." },
+      { "rok": 2032, "text": "100 rokov organizovaného športu v Jacovciach." }
+    ]
+  },
+  "rocniky": {
+    "_zdroj": "Sportnet – konečné tabuľky áčka (dospelí), stiahnuté 17. 11. 2026",
+    "zoznam": [
+      { "rok": "2013/14", "liga": "V. liga Západ", "poz": 12, "z": 16, "skore": "60:86", "body": 32 },
+      { "rok": "2014/15", "liga": "V. liga Stred", "poz": 13, "z": 16, "skore": "52:63", "body": 35 },
+      { "rok": "2015/16", "liga": "V. liga Stred", "poz": 7, "z": 16, "skore": "66:52", "body": 48 },
+      { "rok": "2016/17", "liga": "V. liga Stred", "poz": 8, "z": 16, "skore": "52:49", "body": 38 },
+      { "rok": "2017/18", "liga": "V. liga Stred", "poz": 9, "z": 14, "skore": "50:41", "body": 32 },
+      { "rok": "2018/19", "liga": "V. liga Stred", "poz": 5, "z": 16, "skore": "70:55", "body": 52 },
+      { "rok": "2019/20", "liga": "V. liga Stred", "poz": 10, "z": 16, "skore": "22:29", "body": 18, "pozn": "nedohraná sezóna (pandémia)" },
+      { "rok": "2020/21", "liga": "V. liga Stred", "poz": 13, "z": 16, "skore": "18:34", "body": 13, "pozn": "nedohraná sezóna (pandémia)" },
+      { "rok": "2021/22", "liga": "V. liga Stred", "poz": 14, "z": 16, "skore": "41:83", "body": 22 },
+      { "rok": "2022/23", "liga": "VI. liga Stred", "poz": 14, "z": 16, "skore": "48:64", "body": 30 },
+      { "rok": "2023/24", "liga": "VI. liga Stred", "poz": 15, "z": 16, "skore": "47:73", "body": 24 },
+      { "rok": "2024/25", "liga": "VI. liga Stred", "poz": 7, "z": 16, "skore": "56:66", "body": 40 },
+      { "rok": "2025/26", "liga": "VI. liga Severovýchod", "poz": 2, "z": 16, "skore": "82:38", "body": 64, "naj": true, "pozn": "3 body za víťazom, na jar 14 výhier a 1 prehra" }
+    ]
+  },
+  "sezona2526": {
+    "_zdroj": "Jacovský hlásnik 1/2026 (Zhodnotenie sezóny futbalového oddielu, tréner dospelých Aurel Mora Melendez)",
+    "text": "Po jeseni bolo áčko ôsme a samo priznalo, že to nezodpovedá jeho možnostiam. Na jar prišlo 14 víťazstiev a jediná prehra, s úctyhodnou sériou desiatich víťazných zápasov v rade. Konečné 2. miesto vo VI. lige Severovýchod tréner berie ako dôkaz, že mužstvo má kvalitu.",
+    "pokrik": "JACOVCE, do toho!"
+  },
+  "bociany": {
+    "_zdroj": "Jacovský hlásnik 1/2026 (Prípravka U9: Dvojitý triumf a titul majstrov okresu, tréner Martin Gracik)",
+    "text": "Prípravku U9 volajú Jacovské bociany. V ročníku 2025/26 vyhrala zimný halový turnaj ObFZ Topoľčany a vo finále o majstra okresu v Práznovciach zdolala Ludanice na pokutové kopy 3:2. Klub zorganizoval aj Bocian Cup U9 k 50. výročiu titulu majstrov Európy 1976, deťom prišli dodať chuť Ladislav Jurkemik a Dušan Herda."
+  },
+  "obec": {
+    "_zdroj": "Jacovský hlásnik 1/2024 a 2/2024 (800. výročie, prof. Lukačka); e-obce.sk (história, kultúrne dedičstvo)",
+    "fakty": [
+      { "k": "1224", "t": "Prvú známu písomnú zmienku o Jacovciach z roku 1224 uvádza historik prof. Lukačka. V roku 2024 si obec pripomenula 800 rokov." },
+      { "k": "Tri obce", "t": "Dnešné Jacovce vznikli v 19. storočí spojením troch pôvodne samostatných obcí." },
+      { "k": "Kostol", "t": "Kostol Navštívenia Panny Márie bol pôvodne gotický, asi zo 14. storočia, prestavaný v roku 1680 a v 18. storočí." },
+      { "k": "Remeslá", "t": "V sprievode k 800. výročiu sa predstavili pekári, mlynári a páleníci, výrazné remeslá v obci." }
+    ]
+  },
+  "uspechy": [
+    { "rok": "1956", "text": "víťaz Slovenského pohára po linke Sokola, 2. miesto v Československu" },
+    { "rok": "1953, 1955, 1979/80, 1985/86, 2006/07", "text": "majster okresu Topoľčany" },
+    { "rok": "2025/26", "text": "2. miesto vo VI. lige Severovýchod" },
+    { "rok": "2025/26", "text": "prípravka U9 majster okresu Topoľčany" }
+  ],
+  "sutaze": {
+    "_pozn": "čitateľné názvy súťaží namiesto skratiek a názvov so sponzormi zo Sportnetu",
+    "Slovnaft Cup": "Slovnaft Cup",
+    "VI. liga Severovýchod Macron | yoursport  ZsFZ": "VI. liga Severovýchod",
+    "IV. liga  U19  Macron | yoursport  ZsFZ": "IV. liga U19",
+    "IV. liga - Ž - U13 - ObFZ TO": "IV. liga mladších žiakov U13",
+    "III. liga-prípravka-U11- ObFZ TO": "III. liga prípraviek U11"
+  },
+  "nazvy": {
+    "_pozn": "čitateľné názvy súperov namiesto úradných názvov a veľkých písmen zo Sportnetu",
+    "TJ - ŠK Radošina": "TJ-ŠK Radošina",
+    "FUTBALOVÝ KLUB SLOVAN ŠIMONOVANY - PARTIZÁNSKE": "Slovan Šimonovany-Partizánske",
+    "Futbalový klub Koniarovce": "FK Koniarovce",
+    "Mestský futbalový klub Baník Handlová": "MFK Baník Handlová",
+    "OFK obce Prašice": "OFK Prašice",
+    "TJ Družstevník Horná Nitra Nedožery-Brezany": "TJ Družstevník Nedožery-Brezany",
+    "ŠPORTOVÉ CENTRUM CHYNORANY": "ŠC Chynorany",
+    "ŠK VEGUM Dolné Vestenice": "ŠK Vegum Dolné Vestenice",
+    "TJ  Slovan Bojná": "TJ Slovan Bojná"
+  }
+}
