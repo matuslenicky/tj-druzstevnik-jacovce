@@ -3,7 +3,7 @@
   --bg: #f4f5f0; --paper: #fff; --ink: #14201a; --muted: #56625a; --line: #e1e5dd;
   --green: #0b5e2a; --green-l: #e5f1e8; --focus: #0b5e2a; --link: #0b5e2a;
   --disp: 'Syne', system-ui, sans-serif;
-  --text: 'Atkinson Hyperlegible', system-ui, sans-serif;
+  --text: 'Bitter', Georgia, 'Times New Roman', serif;
   --text-size: 1.0625rem; --lh: 1.6;
   --menu-bg: #f4f5f0; --menu-ink: #14201a;
 }
@@ -126,3 +126,19 @@ a.tile:hover { border-color: var(--green); }
 .ftr-name { font: 700 1.15rem/1.2 var(--disp); }
 .ftr-bar { border-top: 1px solid var(--line); color: var(--muted); }
 .demo { background: var(--green); color: #fff; }
+/* čas výkopu písmom Syne ako skóre (Atkinson Hyperlegible má preškrtnutú nulu: 14:3Ø) */
+.fx-t { font-family: var(--disp); }
+/* úzky telefón: meno klubu v hlavičke sa zalomí, nezájde pod tlačidlo Menu; ročníky bez posúvania */
+@media (max-width: 379.98px) {
+  .brand-n { white-space: normal; line-height: 1.1; }
+  .tile { padding-left: 16px; padding-right: 16px; }
+  .tbl--roc { font-size: .8125rem; }
+  .tbl--roc th, .tbl--roc td { padding-left: 3px; padding-right: 3px; }
+}
+/* Tímy na úzkom telefóne: veľké meno tímu (Syne) by stredný stĺpec stlačilo na nulu a text by prekryl poradie */
+@media (max-width: 459.98px) {
+  .teams { grid-template-columns: max-content minmax(0, 1fr); padding: 0 16px; }
+  .teams a { grid-template-areas: 'n s' 'n l' 'n p'; }
+  .teams-n { font-size: 1.35rem; }
+  .teams-p { font-size: .875rem; color: var(--muted); }
+}

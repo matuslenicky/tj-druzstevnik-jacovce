@@ -8,7 +8,7 @@ from fontTools.ttLib import TTFont
 out_dir = Path(sys.argv[1]); out_dir.mkdir(parents=True, exist_ok=True)
 FAMILIES = {
     'Syne': 'Syne:wght@700;800',
-    'Atkinson Hyperlegible': 'Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400',
+    'Bitter': 'Bitter:ital,wght@0,400;0,700;1,400',
 }
 UNICODES = (list(range(0x20, 0x7F)) + list(range(0xA0, 0x180)) + list(range(0x2000, 0x200C)) +
             list(range(0x2010, 0x2016)) + list(range(0x2018, 0x201F)) +

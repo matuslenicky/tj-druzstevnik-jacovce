@@ -2,7 +2,7 @@
 // Zostavuje ho kluby-siet/engine/assemble.py zo spoločného jadra v2 a tohto súboru (vzhľad, úvod, stránka Klub).
 // Kostra „Mozaika“: úvod je mriežka dlaždíc rôznej veľkosti – najbližší zápas áčka, posledný výsledok, miesto a forma,
 // výsledky, program, Jacovské bociany, ročník 2025/26 a cesta k storočnici 2032. Svetlý podklad, biele dlaždice,
-// jedna zelená. Písmo Syne (nadpisy, čísla) a Atkinson Hyperlegible (text).
+// jedna zelená. Písmo Syne (nadpisy, čísla) a Bitter (text).
 import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
@@ -172,8 +172,8 @@ const homePick = (list, n) => {
   const rest = cand.filter((m) => !a.includes(m)).slice(0, n - a.length);
   return cand.filter((m) => a.includes(m) || rest.includes(m)); // áčko má prednosť, poradie zoznamu ostáva
 };
-const homeUp = (n = 5) => homePick(upcoming, n);
-const homeRes = (n = 5) => homePick(results.filter((x) => x.score), n);
+const homeUp = (n = 5, skip = []) => homePick(upcoming.filter((m) => ![].concat(skip).includes(m)), n); // skip: zápas, ktorý už úvod zvýrazňuje
+const homeRes = (n = 5, skip = []) => homePick(results.filter((x) => x.score && ![].concat(skip).includes(x)), n);
 const MON3 = ['jan', 'feb', 'mar', 'apr', 'máj', 'jún', 'júl', 'aug', 'sep', 'okt', 'nov', 'dec'];
 
 // ---- kostra stránky ------------------------------------------------------------------------------
@@ -189,7 +189,7 @@ function layout({ route, title, desc, body, active, bodyClass = '' }) {
   const ld = route ? '' : `<script type="application/ld+json">${JSON.stringify({
     '@context': 'https://schema.org', '@type': 'SportsClub', name: club.nazov, sport: 'Futbal', ...(club.zalozenie ? { foundingDate: String(club.zalozenie) } : {}),
     email: club.kontakt.email,
-    address: { '@type': 'PostalAddress', streetAddress: club.adresa[0], postalCode: club.adresa[1].slice(0, 6), addressLocality: club.mesto, addressCountry: 'SK' },
+    address: { '@type': 'PostalAddress', ...(club.adresa.length > 1 ? { streetAddress: club.adresa[0] } : {}), postalCode: (club.adresa.at(-1).match(/^\d{3} ?\d{2}/) || [''])[0], addressLocality: club.mesto, addressCountry: 'SK' },
     location: { '@type': 'StadiumOrArena', name: ST.nazov, geo: { '@type': 'GeoCoordinates', latitude: ST.geo[0], longitude: ST.geo[1] } },
     sameAs: [club.sportnetUrl, club.kontakt.facebook].filter(Boolean),
   }).replace(/</g, '\\u003c')}</script>`;
@@ -489,7 +489,7 @@ add('404/', {
 
 const SKIN = {
   nav: 'bar', theme: '#0b5e2a', brand: 'Družstevník Jacovce', brandSub: 'futbal od roku 1932',
-  fonts: ['syne-700.woff', 'atkinson-hyperlegible-400.woff', 'atkinson-hyperlegible-700.woff'],
+  fonts: ['syne-700.woff', 'bitter-400.woff', 'bitter-700.woff'],
   sources: 'História a správy z klubu podľa Jacovského hlásnika.',
   adminHero: 'Futbal v Jacovciach od roku 1932',
   adminFacts: club.milniky.zoznam.map((x) => ({ k: String(x.rok), t: x.text })),
@@ -509,10 +509,10 @@ add('', {
   <h1 class="h1">TJ Družstevník Jacovce</h1>
   <div class="bento">
     ${n ? `<article class="tile tile--next">
-      <p class="tile-k">Najbližší zápas áčka</p>
+      <p class="tile-k">${wl ? 'Áčko po zimnej prestávke' : 'Najbližší zápas áčka'}</p>
       <p class="next-o">${n.home ? 'Jacovce – ' : ''}${esc(n.opponent)}${n.home ? '' : ' – Jacovce'}</p>
       <p class="next-d"><time datetime="${n.date}">${dLong(n.date)}</time>, ${esc(n.time || '')} · ${n.home ? 'doma' : 'vonku'}</p>
-      <p class="next-cd">${wl || `<span class="cd" data-kickoff="${isoLocal(n.date, n.time)}" hidden></span>`}</p>
+      ${wl ? '' : `<p class="next-cd"><span class="cd" data-kickoff="${isoLocal(n.date, n.time)}" hidden></span></p>`}
       <p class="btns"><a class="btn" href="${R}kalendar/zapas-${n.id}.ics" download>${I.cal}Do kalendára</a><a class="btn btn--line" href="${R}${n.url}">Detail</a></p>
     </article>` : ''}
     ${l ? `<a class="tile tile--last" href="${R}${l.detail ? l.url : 'zapasy/'}">
@@ -527,8 +527,8 @@ add('', {
       <p class="tile-m">${row.pts} ${pw(row.pts, 'bod', 'body', 'bodov')} · skóre ${row.gf}:${row.ga}</p>
       ${formHtml(A.slug)}
     </a>` : ''}
-    <section class="tile tile--res" aria-labelledby="res-h"><h2 class="tile-h" id="res-h">Výsledky</h2>${fxList(homeRes(4), R)}${more(`${R}zapasy/#z-vys`, 'Všetky')}</section>
-    <section class="tile tile--prog" aria-labelledby="prog-h"><h2 class="tile-h" id="prog-h">Program</h2>${homeUp(4).length ? fxList(homeUp(4), R) : '<p>Zatiaľ bez programu.</p>'}${more(`${R}zapasy/`, 'Všetky')}</section>
+    <section class="tile tile--res" aria-labelledby="res-h"><h2 class="tile-h" id="res-h">Výsledky</h2>${fxList(homeRes(4, lastA), R)}${more(`${R}zapasy/#z-vys`, 'Všetky')}</section>
+    <section class="tile tile--prog" aria-labelledby="prog-h"><h2 class="tile-h" id="prog-h">Program</h2>${homeUp(4, nextA).length ? fxList(homeUp(4, nextA), R) : '<p>Zatiaľ bez programu.</p>'}${more(`${R}zapasy/`, 'Všetky')}</section>
     <a class="tile tile--green" href="${R}klub/">
       <p class="tile-k">Ročník ${esc(prev.rok)}</p>
       <p class="big-n">${prev.poz}. miesto</p>

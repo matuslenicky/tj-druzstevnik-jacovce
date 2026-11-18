@@ -6,7 +6,7 @@ Ukážka: https://matuslenicky.github.io/tj-druzstevnik-jacovce/ · administrác
 
 ## Vzhľad
 
-**„Mozaika“ (dizajn v2, 17. 11. 2026).** Svetlý podklad, biele dlaždice, jedna zelená. Písmo Syne (nadpisy, čísla) a Atkinson Hyperlegible (text).
+**„Mozaika“ (dizajn v2, 17. 11. 2026).** Svetlý podklad, biele dlaždice, jedna zelená. Písmo Syne (nadpisy, čísla) a Bitter (text).
 
 - úvod je mriežka dlaždíc rôznej veľkosti: najbližší zápas áčka, posledný výsledok, miesto a forma, výsledky, program, ročník 2025/26, Jacovské bociany a odpočet do storočnice 2032,
 - stránka Klub v rovnakých dlaždiciach: míľniky, zápisnica 1932, šesť mien klubu, ročníky áčka, bociany, ihrisko a obec,
