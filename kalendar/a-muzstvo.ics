@@ -24,7 +24,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:zapas-6a40bf52e5a4847e62e93583@tj-druzstevnik-jacovce.sportnet
-DTSTAMP:20261117T233951Z
+DTSTAMP:20261118T001831Z
 DTSTART;TZID=Europe/Bratislava:20260725T170000
 DURATION:PT2H
 SUMMARY:A-mužstvo: TJ Družstevník Jacovce – ŠC Chynorany 0:1
@@ -33,7 +33,7 @@ LOCATION:TJ Družstevník Jacovce
 END:VEVENT
 BEGIN:VEVENT
 UID:zapas-6a7765bd62c4077e4f8759b4@tj-druzstevnik-jacovce.sportnet
-DTSTAMP:20261117T233951Z
+DTSTAMP:20261118T001831Z
 DTSTART;TZID=Europe/Bratislava:20260814T170000
 DURATION:PT2H
 SUMMARY:A-mužstvo: TJ Družstevník Jacovce – TJ Slovan Krušovce 7:0
@@ -42,7 +42,7 @@ LOCATION:TJ Družstevník Jacovce
 END:VEVENT
 BEGIN:VEVENT
 UID:zapas-6a7765bd62c4077e4f875a86@tj-druzstevnik-jacovce.sportnet
-DTSTAMP:20261117T233951Z
+DTSTAMP:20261118T001831Z
 DTSTART;TZID=Europe/Bratislava:20260816T170000
 DURATION:PT2H
 SUMMARY:A-mužstvo: OFK Kovarce – TJ Družstevník Jacovce 0:6
@@ -51,7 +51,7 @@ LOCATION:OFK Kovarce
 END:VEVENT
 BEGIN:VEVENT
 UID:zapas-6a7765c262c4077e4f8768ac@tj-druzstevnik-jacovce.sportnet
-DTSTAMP:20261117T233951Z
+DTSTAMP:20261118T001831Z
 DTSTART;TZID=Europe/Bratislava:20260822T170000
 DURATION:PT2H
 SUMMARY:A-mužstvo: TJ Družstevník Jacovce – FK Iskra Nováky 0:2
@@ -60,7 +60,7 @@ LOCATION:TJ Družstevník Jacovce
 END:VEVENT
 BEGIN:VEVENT
 UID:zapas-6a7765c062c4077e4f8761f9@tj-druzstevnik-jacovce.sportnet
-DTSTAMP:20261117T233951Z
+DTSTAMP:20261118T001831Z
 DTSTART;TZID=Europe/Bratislava:20260829T170000
 DURATION:PT2H
 SUMMARY:A-mužstvo: TJ Baník Sebedražie – TJ Družstevník Jacovce 1:1
@@ -69,7 +69,7 @@ LOCATION:Areál SNP
 END:VEVENT
 BEGIN:VEVENT
 UID:zapas-6a7765cb62c4077e4f879360@tj-druzstevnik-jacovce.sportnet
-DTSTAMP:20261117T233951Z
+DTSTAMP:20261118T001831Z
 DTSTART;TZID=Europe/Bratislava:20260905T160000
 DURATION:PT2H
 SUMMARY:A-mužstvo: TJ Družstevník Jacovce – TJ AC Žabokreky nad Nitr
@@ -79,7 +79,7 @@ LOCATION:TJ Družstevník Jacovce
 END:VEVENT
 BEGIN:VEVENT
 UID:zapas-6a7765c262c4077e4f876897@tj-druzstevnik-jacovce.sportnet
-DTSTAMP:20261117T233951Z
+DTSTAMP:20261118T001831Z
 DTSTART;TZID=Europe/Bratislava:20260912T160000
 DURATION:PT2H
 SUMMARY:A-mužstvo: TJ-ŠK Radošina – TJ Družstevník Jacovce 3:2
@@ -88,7 +88,7 @@ LOCATION:TJ ŠK Radošina
 END:VEVENT
 BEGIN:VEVENT
 UID:zapas-6a7765cb62c4077e4f8791f9@tj-druzstevnik-jacovce.sportnet
-DTSTAMP:20261117T233951Z
+DTSTAMP:20261118T001831Z
 DTSTART;TZID=Europe/Bratislava:20260919T153000
 DURATION:PT2H
 SUMMARY:A-mužstvo: TJ Družstevník Jacovce – OFK Ludanice 2:1
@@ -97,7 +97,7 @@ LOCATION:TJ Družstevník Jacovce
 END:VEVENT
 BEGIN:VEVENT
 UID:zapas-6a7765c262c4077e4f876767@tj-druzstevnik-jacovce.sportnet
-DTSTAMP:20261117T233951Z
+DTSTAMP:20261118T001831Z
 DTSTART;TZID=Europe/Bratislava:20260926T153000
 DURATION:PT2H
 SUMMARY:A-mužstvo: TJ Priehrada Nitrianske Rudno – TJ Družstevník Jac
@@ -107,7 +107,7 @@ LOCATION:Obecný štadion TJ Priehrada
 END:VEVENT
 BEGIN:VEVENT
 UID:zapas-6a7765d762c4077e4f87c12f@tj-druzstevnik-jacovce.sportnet
-DTSTAMP:20261117T233951Z
+DTSTAMP:20261118T001831Z
 DTSTART;TZID=Europe/Bratislava:20261003T130000
 DURATION:PT2H
 SUMMARY:A-mužstvo: TJ Družstevník Jacovce – ŠC Chynorany 2:2
@@ -116,7 +116,7 @@ LOCATION:TJ Družstevník Jacovce
 END:VEVENT
 BEGIN:VEVENT
 UID:zapas-6a7765c162c4077e4f8766a1@tj-druzstevnik-jacovce.sportnet
-DTSTAMP:20261117T233951Z
+DTSTAMP:20261118T001831Z
 DTSTART;TZID=Europe/Bratislava:20261010T150000
 DURATION:PT2H
 SUMMARY:A-mužstvo: TJ Slovan Preseľany – TJ Družstevník Jacovce 4:3
@@ -125,7 +125,7 @@ LOCATION:Štadión TJ Slovan Preseľany
 END:VEVENT
 BEGIN:VEVENT
 UID:zapas-6a7765ef62c4077e4f8808a8@tj-druzstevnik-jacovce.sportnet
-DTSTAMP:20261117T233951Z
+DTSTAMP:20261118T001831Z
 DTSTART;TZID=Europe/Bratislava:20261017T140000
 DURATION:PT2H
 SUMMARY:A-mužstvo: TJ Družstevník Jacovce – FK TJ Skačany 3:3
@@ -134,7 +134,7 @@ LOCATION:TJ Družstevník Jacovce
 END:VEVENT
 BEGIN:VEVENT
 UID:zapas-6a7765ce62c4077e4f879d2d@tj-druzstevnik-jacovce.sportnet
-DTSTAMP:20261117T233951Z
+DTSTAMP:20261118T001831Z
 DTSTART;TZID=Europe/Bratislava:20261025T140000
 DURATION:PT2H
 SUMMARY:A-mužstvo: TJ Tatran Uhrovec – TJ Družstevník Jacovce 1:0
@@ -143,7 +143,7 @@ LOCATION:TJ Tatran Uhrovec
 END:VEVENT
 BEGIN:VEVENT
 UID:zapas-6a7765f562c4077e4f881d2a@tj-druzstevnik-jacovce.sportnet
-DTSTAMP:20261117T233951Z
+DTSTAMP:20261118T001831Z
 DTSTART;TZID=Europe/Bratislava:20261031T140000
 DURATION:PT2H
 SUMMARY:A-mužstvo: TJ Družstevník Jacovce – ŠK Vegum Dolné Vestenic
@@ -153,7 +153,7 @@ LOCATION:TJ Družstevník Jacovce
 END:VEVENT
 BEGIN:VEVENT
 UID:zapas-6a7765c562c4077e4f877348@tj-druzstevnik-jacovce.sportnet
-DTSTAMP:20261117T233951Z
+DTSTAMP:20261118T001831Z
 DTSTART;TZID=Europe/Bratislava:20261108T133000
 DURATION:PT2H
 SUMMARY:A-mužstvo: TJ Slovan Bojná – TJ Družstevník Jacovce 0:5
@@ -162,7 +162,7 @@ LOCATION:TJ Slovan Bojná
 END:VEVENT
 BEGIN:VEVENT
 UID:zapas-6a7765c962c4077e4f878760@tj-druzstevnik-jacovce.sportnet
-DTSTAMP:20261117T233951Z
+DTSTAMP:20261118T001831Z
 DTSTART;TZID=Europe/Bratislava:20261114T133000
 DURATION:PT2H
 SUMMARY:A-mužstvo: TJ Družstevník Jacovce – Slovan Šimonovany-Partiz
@@ -172,7 +172,7 @@ LOCATION:TJ Družstevník Jacovce
 END:VEVENT
 BEGIN:VEVENT
 UID:zapas-6a7765c962c4077e4f878b39@tj-druzstevnik-jacovce.sportnet
-DTSTAMP:20261117T233951Z
+DTSTAMP:20261118T001831Z
 DTSTART;TZID=Europe/Bratislava:20270306T143000
 DURATION:PT2H
 SUMMARY:A-mužstvo: TJ Slovan Krušovce – TJ Družstevník Jacovce
@@ -180,7 +180,7 @@ DESCRIPTION:VI. liga Severovýchod\, 16. kolo\nZápas vonku
 END:VEVENT
 BEGIN:VEVENT
 UID:zapas-6a7765f762c4077e4f88207c@tj-druzstevnik-jacovce.sportnet
-DTSTAMP:20261117T233951Z
+DTSTAMP:20261118T001831Z
 DTSTART;TZID=Europe/Bratislava:20270313T143000
 DURATION:PT2H
 SUMMARY:A-mužstvo: TJ Družstevník Jacovce – OFK Kovarce
@@ -188,7 +188,7 @@ DESCRIPTION:VI. liga Severovýchod\, 17. kolo\nDomáci zápas
 END:VEVENT
 BEGIN:VEVENT
 UID:zapas-6a7765d462c4077e4f87b639@tj-druzstevnik-jacovce.sportnet
-DTSTAMP:20261117T233951Z
+DTSTAMP:20261118T001831Z
 DTSTART;TZID=Europe/Bratislava:20270320T150000
 DURATION:PT2H
 SUMMARY:A-mužstvo: FK Iskra Nováky – TJ Družstevník Jacovce
@@ -196,7 +196,7 @@ DESCRIPTION:VI. liga Severovýchod\, 18. kolo\nZápas vonku
 END:VEVENT
 BEGIN:VEVENT
 UID:zapas-6a7765f162c4077e4f880e1d@tj-druzstevnik-jacovce.sportnet
-DTSTAMP:20261117T233951Z
+DTSTAMP:20261118T001831Z
 DTSTART;TZID=Europe/Bratislava:20270327T150000
 DURATION:PT2H
 SUMMARY:A-mužstvo: TJ Družstevník Jacovce – TJ Baník Sebedražie
@@ -204,7 +204,7 @@ DESCRIPTION:VI. liga Severovýchod\, 19. kolo\nDomáci zápas
 END:VEVENT
 BEGIN:VEVENT
 UID:zapas-6a7765c962c4077e4f8789f5@tj-druzstevnik-jacovce.sportnet
-DTSTAMP:20261117T233951Z
+DTSTAMP:20261118T001831Z
 DTSTART;TZID=Europe/Bratislava:20270404T160000
 DURATION:PT2H
 SUMMARY:A-mužstvo: TJ AC Žabokreky nad Nitrou – TJ Družstevník Jacov
@@ -213,7 +213,7 @@ DESCRIPTION:VI. liga Severovýchod\, 20. kolo\nZápas vonku
 END:VEVENT
 BEGIN:VEVENT
 UID:zapas-6a7765de62c4077e4f87da11@tj-druzstevnik-jacovce.sportnet
-DTSTAMP:20261117T233951Z
+DTSTAMP:20261118T001831Z
 DTSTART;TZID=Europe/Bratislava:20270410T160000
 DURATION:PT2H
 SUMMARY:A-mužstvo: TJ Družstevník Jacovce – TJ-ŠK Radošina
@@ -221,7 +221,7 @@ DESCRIPTION:VI. liga Severovýchod\, 21. kolo\nDomáci zápas
 END:VEVENT
 BEGIN:VEVENT
 UID:zapas-6a7765d062c4077e4f87a420@tj-druzstevnik-jacovce.sportnet
-DTSTAMP:20261117T233951Z
+DTSTAMP:20261118T001831Z
 DTSTART;TZID=Europe/Bratislava:20270418T163000
 DURATION:PT2H
 SUMMARY:A-mužstvo: OFK Ludanice – TJ Družstevník Jacovce
@@ -229,7 +229,7 @@ DESCRIPTION:VI. liga Severovýchod\, 22. kolo\nZápas vonku
 END:VEVENT
 BEGIN:VEVENT
 UID:zapas-6a7765df62c4077e4f87de78@tj-druzstevnik-jacovce.sportnet
-DTSTAMP:20261117T233951Z
+DTSTAMP:20261118T001831Z
 DTSTART;TZID=Europe/Bratislava:20270425T163000
 DURATION:PT2H
 SUMMARY:A-mužstvo: TJ Družstevník Jacovce – TJ Priehrada Nitrianske R
@@ -238,7 +238,7 @@ DESCRIPTION:VI. liga Severovýchod\, 23. kolo\nDomáci zápas
 END:VEVENT
 BEGIN:VEVENT
 UID:zapas-6a7765d662c4077e4f87bbfd@tj-druzstevnik-jacovce.sportnet
-DTSTAMP:20261117T233951Z
+DTSTAMP:20261118T001831Z
 DTSTART;TZID=Europe/Bratislava:20270502T170000
 DURATION:PT2H
 SUMMARY:A-mužstvo: ŠC Chynorany – TJ Družstevník Jacovce
@@ -246,7 +246,7 @@ DESCRIPTION:VI. liga Severovýchod\, 24. kolo\nZápas vonku
 END:VEVENT
 BEGIN:VEVENT
 UID:zapas-6a7765de62c4077e4f87d9bd@tj-druzstevnik-jacovce.sportnet
-DTSTAMP:20261117T233951Z
+DTSTAMP:20261118T001831Z
 DTSTART;TZID=Europe/Bratislava:20270509T170000
 DURATION:PT2H
 SUMMARY:A-mužstvo: TJ Družstevník Jacovce – TJ Slovan Preseľany
@@ -254,7 +254,7 @@ DESCRIPTION:VI. liga Severovýchod\, 25. kolo\nDomáci zápas
 END:VEVENT
 BEGIN:VEVENT
 UID:zapas-6a7765d762c4077e4f87c191@tj-druzstevnik-jacovce.sportnet
-DTSTAMP:20261117T233951Z
+DTSTAMP:20261118T001831Z
 DTSTART;TZID=Europe/Bratislava:20270517T170000
 DURATION:PT2H
 SUMMARY:A-mužstvo: FK TJ Skačany – TJ Družstevník Jacovce
@@ -262,7 +262,7 @@ DESCRIPTION:VI. liga Severovýchod\, 26. kolo\nZápas vonku
 END:VEVENT
 BEGIN:VEVENT
 UID:zapas-6a7765d362c4077e4f87b00e@tj-druzstevnik-jacovce.sportnet
-DTSTAMP:20261117T233951Z
+DTSTAMP:20261118T001831Z
 DTSTART;TZID=Europe/Bratislava:20270523T170000
 DURATION:PT2H
 SUMMARY:A-mužstvo: TJ Družstevník Jacovce – TJ Tatran Uhrovec
@@ -270,7 +270,7 @@ DESCRIPTION:VI. liga Severovýchod\, 27. kolo\nDomáci zápas
 END:VEVENT
 BEGIN:VEVENT
 UID:zapas-6a7765da62c4077e4f87cd21@tj-druzstevnik-jacovce.sportnet
-DTSTAMP:20261117T233951Z
+DTSTAMP:20261118T001831Z
 DTSTART;TZID=Europe/Bratislava:20270531T170000
 DURATION:PT2H
 SUMMARY:A-mužstvo: ŠK Vegum Dolné Vestenice – TJ Družstevník Jacovc
@@ -279,7 +279,7 @@ DESCRIPTION:VI. liga Severovýchod\, 28. kolo\nZápas vonku
 END:VEVENT
 BEGIN:VEVENT
 UID:zapas-6a7765df62c4077e4f87dcd6@tj-druzstevnik-jacovce.sportnet
-DTSTAMP:20261117T233951Z
+DTSTAMP:20261118T001831Z
 DTSTART;TZID=Europe/Bratislava:20270607T170000
 DURATION:PT2H
 SUMMARY:A-mužstvo: TJ Družstevník Jacovce – TJ Slovan Bojná
@@ -287,7 +287,7 @@ DESCRIPTION:VI. liga Severovýchod\, 29. kolo\nDomáci zápas
 END:VEVENT
 BEGIN:VEVENT
 UID:zapas-6a7765e062c4077e4f87e0b9@tj-druzstevnik-jacovce.sportnet
-DTSTAMP:20261117T233951Z
+DTSTAMP:20261118T001831Z
 DTSTART;TZID=Europe/Bratislava:20270614T170000
 DURATION:PT2H
 SUMMARY:A-mužstvo: Slovan Šimonovany-Partizánske – TJ Družstevník J

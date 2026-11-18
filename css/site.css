@@ -1,9 +1,9 @@
 /* Syne, Atkinson Hyperlegible (SIL OFL 1.1), orezané na latinku strednej Európy */
 @font-face{font-family:'Syne';font-style:normal;font-weight:700;font-display:swap;src:url(../fonts/syne-700.woff) format("woff")}
 @font-face{font-family:'Syne';font-style:normal;font-weight:800;font-display:swap;src:url(../fonts/syne-800.woff) format("woff")}
-@font-face{font-family:'Atkinson Hyperlegible';font-style:italic;font-weight:400;font-display:swap;src:url(../fonts/atkinson-hyperlegible-400i.woff) format("woff")}
-@font-face{font-family:'Atkinson Hyperlegible';font-style:normal;font-weight:400;font-display:swap;src:url(../fonts/atkinson-hyperlegible-400.woff) format("woff")}
-@font-face{font-family:'Atkinson Hyperlegible';font-style:normal;font-weight:700;font-display:swap;src:url(../fonts/atkinson-hyperlegible-700.woff) format("woff")}
+@font-face{font-family:'Bitter';font-style:italic;font-weight:400;font-display:swap;src:url(../fonts/bitter-400i.woff) format("woff")}
+@font-face{font-family:'Bitter';font-style:normal;font-weight:400;font-display:swap;src:url(../fonts/bitter-400.woff) format("woff")}
+@font-face{font-family:'Bitter';font-style:normal;font-weight:700;font-display:swap;src:url(../fonts/bitter-700.woff) format("woff")}
 /* ===== spoločný základ v2 (kluby-siet/engine/base.css): len štruktúra a prístupnosť, vzhľad dodá skin.css ===== */
 *, *::before, *::after { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; overflow-x: clip; scroll-padding-top: 16px; }
@@ -218,12 +218,21 @@ a:hover .teams-s { text-decoration: underline; }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; animation: none !important; } }
 /* ===== koniec základu, nasleduje skin.css webu ===== */
 
+/* tímy na úzkom displeji: poradie pod súťažou, stredný stĺpec sa nestlačí na nulu */
+@media (max-width: 459.98px) {
+  .teams { grid-template-columns: max-content minmax(0, 1fr); }
+  .teams a { grid-template-areas: 'n s' 'n l' 'n p'; row-gap: 2px; }
+  .teams-p { white-space: normal; }
+}
+/* meno klubu v hlavičke pri 320 px nesmie zájsť pod tlačidlo Menu */
+@media (max-width: 379.98px) { .hdr .brand-n { white-space: normal; line-height: 1.1; } .hdr .brand-s { display: none; } }
+
 /* TJ Družstevník Jacovce – „Mozaika“. Svetlý podklad, biele dlaždice, jedna zelená. */
 :root {
   --bg: #f4f5f0; --paper: #fff; --ink: #14201a; --muted: #56625a; --line: #e1e5dd;
   --green: #0b5e2a; --green-l: #e5f1e8; --focus: #0b5e2a; --link: #0b5e2a;
   --disp: 'Syne', system-ui, sans-serif;
-  --text: 'Atkinson Hyperlegible', system-ui, sans-serif;
+  --text: 'Bitter', Georgia, 'Times New Roman', serif;
   --text-size: 1.0625rem; --lh: 1.6;
   --menu-bg: #f4f5f0; --menu-ink: #14201a;
 }
@@ -346,3 +355,19 @@ a.tile:hover { border-color: var(--green); }
 .ftr-name { font: 700 1.15rem/1.2 var(--disp); }
 .ftr-bar { border-top: 1px solid var(--line); color: var(--muted); }
 .demo { background: var(--green); color: #fff; }
+/* čas výkopu písmom Syne ako skóre (Atkinson Hyperlegible má preškrtnutú nulu: 14:3Ø) */
+.fx-t { font-family: var(--disp); }
+/* úzky telefón: meno klubu v hlavičke sa zalomí, nezájde pod tlačidlo Menu; ročníky bez posúvania */
+@media (max-width: 379.98px) {
+  .brand-n { white-space: normal; line-height: 1.1; }
+  .tile { padding-left: 16px; padding-right: 16px; }
+  .tbl--roc { font-size: .8125rem; }
+  .tbl--roc th, .tbl--roc td { padding-left: 3px; padding-right: 3px; }
+}
+/* Tímy na úzkom telefóne: veľké meno tímu (Syne) by stredný stĺpec stlačilo na nulu a text by prekryl poradie */
+@media (max-width: 459.98px) {
+  .teams { grid-template-columns: max-content minmax(0, 1fr); padding: 0 16px; }
+  .teams a { grid-template-areas: 'n s' 'n l' 'n p'; }
+  .teams-n { font-size: 1.35rem; }
+  .teams-p { font-size: .875rem; color: var(--muted); }
+}
